@@ -1,0 +1,125 @@
+@charset "EUC-KR";
+
+path{
+    fill: gray;
+    stroke-linejoin:round;
+    background-color: none;
+}
+path:not(d){
+    color: none;
+}
+.TEXT {
+    fill: #ffffff;
+    font-size: 20;
+    font-weight: bold;
+    text-anchor: middle;
+    alignment-baseline: middle;
+    display: none;
+}
+.city{
+    stroke: white;
+    stroke-width: 1px;
+    fill: rgb(88, 87, 87);
+}
+#CD11:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD26:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD27:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD28:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD29:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD30:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD31:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD36:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD41:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD42:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD43:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD44:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD45:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD46:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD47:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD48:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
+#CD50:hover {
+    fill: rgb(201, 58, 58);
+    zoom: 2;
+    transition: 0.8s;
+    stroke: rgb(150, 9, 9);
+}
