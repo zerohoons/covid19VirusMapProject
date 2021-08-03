@@ -19,6 +19,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.c19m.service.MyService;
 
+@CrossOrigin(origins = "*")
 @Controller
 public class MyController{
 
@@ -31,11 +32,11 @@ public class MyController{
 		return new ModelAndView("mainPage");
 	}
 	
-	@RequestMapping(value = "covid_ko.do", method=RequestMethod.GET)
+	@RequestMapping(value = "covidko.do", method=RequestMethod.GET)
 	public String covid_koTable(){
 		StringBuffer result = new StringBuffer();
 		try {
-			String APIurl = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=%2Bc6uay4R3WotAQklde0zdRtCyjoZa2c2bihkx0Ll9Sf89wtvvthVcpzS2O6vvm0t%2Fe8Mm6PGadBAgEvo%2B9NNFg%3D%3D&pageNo=1&numOfRows:10&startCreateDt:20210801&endCreateDt:%2020210801%22;";
+			String APIurl = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=%2Bc6uay4R3WotAQklde0zdRtCyjoZa2c2bihkx0Ll9Sf89wtvvthVcpzS2O6vvm0t%2Fe8Mm6PGadBAgEvo%2B9NNFg%3D%3D&pageNo=1&numOfRows:10;";
 			
 			URL url = new URL(APIurl);
 			HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();

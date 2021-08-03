@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="resources/css/korea.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="resources/js/map.js"></script>
+<link rel="icon" type="image/png" href="http://example.com/myicon.png">
 <style>
 body {
 	background: rgb(68, 67, 67);
@@ -52,6 +53,21 @@ svg path {
 
 path:active {
 	fill: crimson;
+}
+
+#covidTable{
+	width :0vw;
+	height :auto;
+	margin: 3em auto;
+	text-align: center;
+}
+
+#covidTable tr:nth-child(odd){
+	background-color: rgba(102,102,102,0.8);
+}
+
+#covidTable tr:nth-child(even){
+	background-color: rgba(255,255,255,0.5);
 }
 </style>
 </head>
@@ -112,7 +128,7 @@ path:active {
 				</g></svg>
 		</div>
 
-		<div>
+		<div style="text-align: center;">
 			<h3>오늘 현황</h3>
 			<table id="covidTable">
 			</table>
@@ -121,29 +137,29 @@ path:active {
 </body>
 <script type="text/javascript">
 	$.ajax({
-		url:'covid_ko.do',
+		url:'http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=%2Bc6uay4R3WotAQklde0zdRtCyjoZa2c2bihkx0Ll9Sf89wtvvthVcpzS2O6vvm0t%2Fe8Mm6PGadBAgEvo%2B9NNFg%3D%3D&pageNo=1&numOfRows=1&startCreateDt=20210802&endCreateDt=20210802&STD_DAY=2020%EB%85%84%203%EC%9B%94%2013%EC%9D%BC%2000%EC%8B%9C',
 		type:'get',
-		dataType:form,
-		success:function(data){
+		dataType:'xml',
+		success:function(data){		
+			cnt = 1;
 			var table = "<thead><tr>";
-			table += "<th>지역명</th>";
-			table += "<th>전일대비</th>";
-			table += "<th>확진자 수</th>";
-			table += "<th>격리 중</th>";
-			table += "<th>격리 해제</th>";
-			table += "<th>사망자</th>";
+			table += "<th style='width: 10%'>지역명</th>";
+			table += "<th  colspan='2' style='width: 25%'>전일대비</th>";
+			table += "<th style='width: 15%'>확진자 수</th>";
+			table += "<th style='width: 15%'>격리 중</th>";
+			table += "<th style='width: 15%'>격리 해제</th>";
+			table += "<th style='width: 10%'>사망자(누적)</th>";
 			table += "</tr></thead>";
 			table += "<tbody>";
 			$(data).find('item').each(function() {
 				table += "<tr>";
-				table += "<td>"+this["gubun"].text()+"</td>";
+				table += "<td>"+$(this).find("gubun").text()+"</td>";
 				var dec = $(this).find("INC_DEC");
-				if(dec>0){					
-				table += "<td style='color:red'>"+$(this).find("incDec").text();+" ▲ </td>"
-				} else if(dec==0){
-				table += "<td style='color:white'>"+$(this).find("incDec").text();+" - </td>"					
+				dec *=1;
+				if(dec==0){
+				table += "<td  style='width: 15%' >"+$(this).find("incDec").text()+"</td><td style='color:white; width: 10%'> - </td>";					
 				} else{
-				table += "<td style='color:blue'>"+$(this).find("incDec").text();+" ▼ </td>"					
+				table += "<td  style='width: 15%'>"+$(this).find("incDec").text()+"</td><td style='color:red; width: 10%'> ▲ </td>";
 				}
 				table += "<td>"+$(this).find("defCnt").text()+"</td>";
 				table += "<td>"+$(this).find("isolIngCnt").text()+"</td>";
@@ -158,5 +174,18 @@ path:active {
 			alert('로딩을 실패하였습니다.')
 		}
 	});
+	
+	$('document').ready(function() {
+		$('#covidTable').css({
+			"width" : "25vw",
+			"transition" : "1.2s"
+		});
+		
+		$('.map').css({
+			"width" : "25vw",
+			"transition" : "1.2s"
+		})
+	});
+	
 </script>
 </html>
